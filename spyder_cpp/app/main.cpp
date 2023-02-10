@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "mainwindow.h"
+#include "logger.h"
 
 using namespace std;
 
@@ -31,7 +32,7 @@ void testSpdlog() {
 }
 
 int main(int argc, char* argv[]) {
-	testSpdlog();
+	INFOLOG("setup spyder_cpp!");
 	QApplication a(argc, argv);
 	MainWindow w;
 	w.show();
