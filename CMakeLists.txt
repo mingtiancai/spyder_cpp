@@ -37,3 +37,4 @@ include_directories(${SPDLOG_REPO_DIR}/include)
 include_directories(${CMAKE_SOURCE_DIR}/spyder_cpp/util)
 
 add_subdirectory(spyder_cpp)
+add_subdirectory(test)
