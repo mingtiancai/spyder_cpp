@@ -48,7 +48,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR}/_deps/json-src/include)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/_deps/cli11-src/include)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/_deps/spdlog-src/include)
 
-include_directories(${CMAKE_SOURCE_DIR}/spyder_cpp/core)
+include_directories(${CMAKE_SOURCE_DIR}/spyder_cpp/core/logger)
 
 add_subdirectory(spyder_cpp)
 add_subdirectory(test)
