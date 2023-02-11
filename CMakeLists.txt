@@ -27,32 +27,26 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_CURRENT_BINARY_DIR}/bin/rele
 file(MAKE_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE})
 
 # 3rdpart lib
-set(SPDLOG_REPO_PARENT "${CMAKE_CURRENT_BINARY_DIR}/lib")
-set(SPDLOG_REPO_DIR "${SPDLOG_REPO_PARENT}/spdlog")
-set(SPDLOG_REPO_BIN_DIR "${CMAKE_CURRENT_BINARY_DIR}/spdlog_build")
+include(FetchContent)
 
-file(MAKE_DIRECTORY ${SPDLOG_REPO_DIR})
-file(MAKE_DIRECTORY ${SPDLOG_REPO_BIN_DIR})
-execute_process(
-    COMMAND git clone "https://github.com/gabime/spdlog.git" spdlog
-    WORKING_DIRECTORY ${SPDLOG_REPO_PARENT})
+FetchContent_Declare(spdlog
+    GIT_REPOSITORY https://github.com/gabime/spdlog.git
+    GIT_TAG v1.11.0)
+FetchContent_MakeAvailable(spdlog)
 
-add_subdirectory(${SPDLOG_REPO_DIR} ${SPDLOG_REPO_BIN_DIR})
-include_directories(${SPDLOG_REPO_DIR}/include)
+FetchContent_Declare(CLI11
+    GIT_REPOSITORY https://github.com/CLIUtils/CLI11.git
+    GIT_TAG v2.3.2)
+FetchContent_MakeAvailable(CLI11)
 
-set(CLI11_REPO_PARENT "${CMAKE_CURRENT_BINARY_DIR}/lib")
-set(CLI11_REPO_DIR "${SPDLOG_REPO_PARENT}/CLI11")
-set(CLI11_REPO_BIN_DIR "${CMAKE_CURRENT_BINARY_DIR}/gflags_build")
+FetchContent_Declare(json
+    GIT_REPOSITORY https://github.com/nlohmann/json.git
+    GIT_TAG v3.11.2)
+FetchContent_MakeAvailable(json)
 
-file(MAKE_DIRECTORY ${CLI11_REPO_DIR})
-file(MAKE_DIRECTORY ${CLI11_REPO_BIN_DIR})
-execute_process(
-    COMMAND git clone "https://github.com/CLIUtils/CLI11.git" CLI11
-    WORKING_DIRECTORY ${CLI11_REPO_PARENT})
-
-add_subdirectory(${CLI11_REPO_DIR} ${CLI11_REPO_BIN_DIR})
-include_directories(${CLI11_REPO_DIR}/include)
-message(${CLI11_REPO_DIR}/include)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/_deps/json-src/include)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/_deps/cli11-src/include)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/_deps/spdlog-src/include)
 
 include_directories(${CMAKE_SOURCE_DIR}/spyder_cpp/util)
 
