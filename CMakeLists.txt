@@ -40,21 +40,19 @@ execute_process(
 add_subdirectory(${SPDLOG_REPO_DIR} ${SPDLOG_REPO_BIN_DIR})
 include_directories(${SPDLOG_REPO_DIR}/include)
 
-set(GFLAGS_REPO_PARENT "${CMAKE_CURRENT_BINARY_DIR}/lib")
-set(GFLAGS_REPO_DIR "${SPDLOG_REPO_PARENT}/gflags")
-set(GFLAGS_REPO_BIN_DIR "${CMAKE_CURRENT_BINARY_DIR}/gflags_build")
+set(CLI11_REPO_PARENT "${CMAKE_CURRENT_BINARY_DIR}/lib")
+set(CLI11_REPO_DIR "${SPDLOG_REPO_PARENT}/CLI11")
+set(CLI11_REPO_BIN_DIR "${CMAKE_CURRENT_BINARY_DIR}/gflags_build")
 
-message("-------=========" ${CMAKE_CURRENT_BINARY_DIR})
-message("-------=========" ${CMAKE_CURRENT_BINARY_DIR})
-
-file(MAKE_DIRECTORY ${GFLAGS_REPO_DIR})
-file(MAKE_DIRECTORY ${GFLAGS_REPO_BIN_DIR})
+file(MAKE_DIRECTORY ${CLI11_REPO_DIR})
+file(MAKE_DIRECTORY ${CLI11_REPO_BIN_DIR})
 execute_process(
-    COMMAND git clone "https://github.com/gflags/gflags.git" gflags
-    WORKING_DIRECTORY ${GFLAGS_REPO_PARENT})
+    COMMAND git clone "https://github.com/CLIUtils/CLI11.git" CLI11
+    WORKING_DIRECTORY ${CLI11_REPO_PARENT})
 
-add_subdirectory(${GFLAGS_REPO_DIR} ${GFLAGS_REPO_BIN_DIR})
-include_directories(${GFLAGS_REPO_DIR}/include)
+add_subdirectory(${CLI11_REPO_DIR} ${CLI11_REPO_BIN_DIR})
+include_directories(${CLI11_REPO_DIR}/include)
+message(${CLI11_REPO_DIR}/include)
 
 include_directories(${CMAKE_SOURCE_DIR}/spyder_cpp/util)
 
