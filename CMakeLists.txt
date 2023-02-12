@@ -20,14 +20,6 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core Gui)
 set(IMG_DOC_RESOURCE "${CMAKE_SOURCE_DIR}/resource/img_doc_src/img_doc.qrc")
 set(IMG_CODE_RESOURCE "${CMAKE_SOURCE_DIR}/resource/img_code_src/img_code.qrc")
 
-# message(${IMG_RESOURCE})
-
-# qt_add_resources( example.qrc)
-
-# qt_add_resources(spyder_cpp "img"
-# PREFIX "/img_src"
-# FILES "spyder.png")
-
 # mainwindow binary files dir
 set(MAINWINDOW_BINARY_PARENT "${CMAKE_CURRENT_BINARY_DIR}/spyder_cpp")
 
@@ -37,7 +29,7 @@ file(MAKE_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_CURRENT_BINARY_DIR}/bin/release")
 file(MAKE_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE})
 
-include(./cmake/download3rdPartLib.cmake)
+include(./cmake/download_3rd_part_lib.cmake)
 
 include_directories(${CMAKE_SOURCE_DIR}/spyder_cpp/core)
 

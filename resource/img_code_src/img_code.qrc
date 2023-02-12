@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>spyder.svg</file>
+        <file>windows_app_icon.ico</file>
     </qresource>
 </RCC>
