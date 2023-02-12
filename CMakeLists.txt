@@ -14,8 +14,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # generate lib files in windows when compile Internal dynamic library
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Core Gui)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core Gui)
+
+set(IMG_RESOURCE "${CMAKE_SOURCE_DIR}/img_src/img.qrc")
+
+# message(${IMG_RESOURCE})
+
+# qt_add_resources( example.qrc)
+
+# qt_add_resources(spyder_cpp "img"
+# PREFIX "/img_src"
+# FILES "spyder.png")
 
 # mainwindow binary files dir
 set(MAINWINDOW_BINARY_PARENT "${CMAKE_CURRENT_BINARY_DIR}/spyder_cpp")

@@ -1,12 +1,14 @@
-#include <spdlog/spdlog.h>
-
-#include <QApplication>
 #include <iostream>
 
-#include "logger/logger.h"
-#include "mainwindow.h"
+#include <QApplication>
+#include <QIcon>
 
+#include <spdlog/spdlog.h>
+
+#include "logger/logger.h"
 #include "cli/cli_option.h"
+
+#include "mainwindow.h"
 
 using namespace std;
 
@@ -15,10 +17,10 @@ int main(int argc, char* argv[]) {
 
 	core::CliOption option;
 	core::getOption(argc, argv, option);
-
 	INFOLOG(option.print());
 
 	QApplication a(argc, argv);
+	a.setWindowIcon(QIcon(":/spyder.ico"));
 	MainWindow w;
 	w.show();
 	return a.exec();
