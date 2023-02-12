@@ -17,7 +17,8 @@ set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Core Gui)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core Gui)
 
-set(IMG_RESOURCE "${CMAKE_SOURCE_DIR}/img_src/img.qrc")
+set(IMG_DOC_RESOURCE "${CMAKE_SOURCE_DIR}/resource/img_doc_src/img_doc.qrc")
+set(IMG_CODE_RESOURCE "${CMAKE_SOURCE_DIR}/resource/img_code_src/img_code.qrc")
 
 # message(${IMG_RESOURCE})
 

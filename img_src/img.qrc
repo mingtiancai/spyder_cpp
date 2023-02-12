@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>spyder.ico</file>
-        <file>spyder.png</file>
-    </qresource>
-</RCC>
