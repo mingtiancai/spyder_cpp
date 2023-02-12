@@ -1,6 +1,0 @@
-add_library(spyder_cpp_core SHARED ./logger.cpp)
-target_include_directories(spyder_cpp_core PRIVATE ${CMAKE_SOURCE_DIR})
-set_target_properties(spyder_cpp_core PROPERTIES PUBLIC_HEADER ./logger.h)
-
-SET_TARGET_PROPERTIES(spyder_cpp_core PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG})
-SET_TARGET_PROPERTIES(spyder_cpp_core PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE})
