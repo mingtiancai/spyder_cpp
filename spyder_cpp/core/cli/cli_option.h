@@ -22,6 +22,8 @@ namespace core {
 
 		std::string print() {
 			std::string resultStr;
+			resultStr += "spyder_cpp cli option";
+			resultStr += "\n";
 
 			resultStr += "isNewInstance: " + std::to_string(isNewInstance);
 			resultStr += "\n";
