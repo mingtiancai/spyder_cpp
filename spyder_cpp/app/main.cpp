@@ -18,9 +18,11 @@ int main(int argc, char* argv[]) {
 	INFOLOG(option.print());
 
 	QApplication a(argc, argv);
+	QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+
 	a.setWindowIcon(QIcon(":/windows_app_icon.ico"));
 	MainWindow w;
-	w.setWindowTitle("spyder_cpp");
+
 	w.show();
 	return a.exec();
 }
