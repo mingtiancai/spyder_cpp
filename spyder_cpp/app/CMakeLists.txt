@@ -33,6 +33,7 @@ endif()
 
 target_link_libraries(spyder_cpp PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Svg
     spyder_cpp_core)
 
 set_target_properties(spyder_cpp PROPERTIES
