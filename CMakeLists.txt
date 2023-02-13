@@ -14,8 +14,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # generate lib files in windows when compile Internal dynamic library
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Core Gui)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Core Gui)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS
+    Widgets
+    Core
+    Gui
+    Svg
+)
+
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
+    Widgets
+    Core
+    Gui
+    Svg
+)
 
 set(IMG_DOC_RESOURCE "${CMAKE_SOURCE_DIR}/resource/img_doc_src/img_doc.qrc")
 set(IMG_CODE_RESOURCE "${CMAKE_SOURCE_DIR}/resource/img_code_src/img_code.qrc")
