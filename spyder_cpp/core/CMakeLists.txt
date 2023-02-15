@@ -4,6 +4,7 @@ set(MODULE_CORE_HEADER
     logger/logger.h
     cli/cli_option.h
     base/color_system.h
+    base/palette.h
 )
 
 set(SPYDER_CPP_CORE_PUBLIC_HEADER ${MODULE_CORE_HEADER})

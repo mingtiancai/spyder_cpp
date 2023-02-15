@@ -1,104 +1,69 @@
 #ifndef COLOR_SYSTEM_H
 #define COLOR_SYSTEM_H
 
+#include <map>
 #include <string>
+using std::map;
 using std::string;
-
 namespace core {
-struct Green {
-  string B0 = "#000000";
-  string B10 = "#064738";
-  string B20 = "#055C49";
-  string B30 = "#007A5E";
-  string B40 = "#008760";
-  string B50 = "#019D70";
-  string B60 = "#02BA85";
-  string B70 = "#20C997";
-  string B80 = "#44DEB0";
-  string B90 = "#3BEBB7";
-  string B100 = "#88F2D3";
-  string B110 = "#B0F5E1";
-  string B120 = "#D1FBEE";
-  string B130 = "#E4FFF7";
-  string B140 = "#F5FFFD";
-  string B150 = "#FFFFFF";
-};
 
-struct Red {
-  string B0 = "#000000";
-  string B10 = "#470606";
-  string B20 = "#760B0B";
-  string B30 = "#AF0F0F";
-  string B40 = "#D4140B";
-  string B50 = "#DE321F";
-  string B60 = "#E24232";
-  string B70 = "#E74C3C";
-  string B80 = "#F66657";
-  string B90 = "#F88478";
-  string B100 = "#FFACA4";
-  string B110 = "#FFC3BD";
-  string B120 = "#FEDDDA";
-  string B130 = "#FFEEEE";
-  string B140 = "#FFF5F5";
-  string B150 = "##FFFFFF";
-};
+map<string, string> GreenColorMap = {
+    {"B0", "#000000"},   {"B10", "#064738"},  {"B20", "#055C49"},
+    {"B30", "#007A5E"},  {"B40", "#008760"},  {"B50", "#019D70"},
+    {"B60", "#02BA85"},  {"B70", "#20C997"},  {"B80", "#44DEB0"},
+    {"B90", "#3BEBB7"},  {"B100", "#88F2D3"}, {"B110", "#B0F5E1"},
+    {"B120", "#D1FBEE"}, {"B130", "#E4FFF7"}, {"B140", "#F5FFFD"},
+    {"B150", "#FFFFFF"}};
 
-struct Orange {
-  string B0 = "#000000";
-  string B10 = "#471D06";
-  string B20 = "#692907";
-  string B30 = "#AB3E00";
-  string B40 = "#CE4B01";
-  string B50 = "#E05E15";
-  string B60 = "#E57004";
-  string B70 = "#F37E12";
-  string B80 = "#FF993B";
-  string B90 = "#FFB950";
-  string B100 = "#FFCF84";
-  string B110 = "#FFDDA7";
-  string B120 = "#FFEACA";
-  string B130 = "#FFF3E2";
-  string B140 = "#FFFBF5";
-  string B150 = "##FFFFFF";
-};
+map<string, string> RedColorMap = {
+    {"B0 ", "#000000"},   {" B10", "#470606"},  {"B20", "#760B0B"},
+    {"B30", "#AF0F0F"},   {"B40", "#D4140B"},   {"B50", "#DE321F"},
+    {"B60", "#E24232"},   {"B70", "#E74C3C"},   {"B80", "#F66657"},
+    {"B90", "#F88478"},   {"B100", "#FFACA4"},  {"B110 ", "#FFC3BD"},
+    {"B120 ", "#FEDDDA"}, {"B130 ", "#FFEEEE"}, {"B140 ", "#FFF5F5"},
+    {"B150 ", "#FFFFFF"}};
 
-struct GroupDark {
-  string B10 = "#E11C1C";
-  string B20 = "#FF8A00";
-  string B30 = "#88BA00";
-  string B40 = "#2DB500";
-  string B50 = "#3FC6F0";
-  string B60 = "#107EEC";
-  string B70 = "#5C47E0";
-  string B80 = "#7F27C5";
-  string B90 = "#C88AFA";
-  string B100 = "#AF2294";
-  string B110 = "#DB4D8E";
-  string B120 = "#38D4A4";
-};
+map<string, string> OrangeColorMap = {
+    {"B0", "#000000"},    {"B10", "#471D06"},   {"B20 ", "#692907"},
+    {"B30 ", "#AB3E00"},  {"B40 ", "#CE4B01"},  {"B50 ", "#E05E15"},
+    {"B60 ", "#E57004"},  {"B70 ", "#F37E12"},  {"B80 ", "#FF993B"},
+    {"B90 ", "#FFB950"},  {"B100", "#FFCF84"},  {"B110 ", "#FFDDA7"},
+    {"B120 ", "#FFEACA"}, {"B130 ", "#FFF3E2"}, {"B140 ", "#FFFBF5"},
+    {"B150 ", "#FFFFFF"}};
 
-struct GroupLight {
-  string B10 = "#FF6700";
-  string B20 = "#FFB000";
-  string B30 = "#FFE600";
-  string B40 = "#7FDD05";
-  string B50 = "#00A585";
-  string B60 = "#22BCF2";
-  string B70 = "#1256CC";
-  string B80 = "#803AD0";
-  string B90 = "#B568F2";
-  string B100 = "#CC2782";
-  string B110 = "#FF71BF";
-  string B120 = "#7EE8C7";
-};
+map<string, string> GroupDarkColorMap{
+    {"B10", "#E11C1C"},  {"B20", "#FF8A00"},  {"B30", "#88BA00"},
+    {"B40", "#2DB500"},  {"B50", "#3FC6F0"},  {"B60", "#107EEC"},
+    {"B70", "#5C47E0"},  {"B80", "#7F27C5"},  {"B90", "#C88AFA"},
+    {"B100", "#AF2294"}, {"B110", "#DB4D8E"}, {"B120", "#38D4A4"}};
 
-struct LogoColor {
-  string B10 = "#3775a9";
-  string B20 = "#ffd444";
-  string B30 = "#414141";
-  string B40 = "#fafafa";
-  string B50 = "#ee0000";
-};
+map<string, string> GroupLightColorMap{
+    {"B10", "#FF6700"},  {"B20", "#FFB000"},  {"B30", "#FFE600"},
+    {"B40", "#7FDD05"},  {"B50", "#00A585"},  {"B60", "#22BCF2"},
+    {"B70", "#1256CC"},  {"B80", "#803AD0"},  {"B90", "#B568F2"},
+    {"B100", "#CC2782"}, {"B110", "#FF71BF"}, {"B120", "#7EE8C7"}};
+
+map<string, string> LogoColorMap{{"B10", "#3775a9"},
+                                 {"B20", "#ffd444"},
+                                 {"B30", "#414141"},
+                                 {"B40", "#fafafa"},
+                                 {"B50", "#ee0000"}};
+
+map<string, string> GrayColorMap{
+    {"B0 ", "#000000"},   {" B10", "#19232D"},  {"B20", "#293544"},
+    {"B30", "#37414F"},   {"B40", "#455364"},   {"B50", "#54687A"},
+    {"B60", "#60798B"},   {"B70", "#788D9C"},   {"B80", "#9DA9B5"},
+    {"B90", "#ACB1B6"},   {"B100", "#B9BDC1"},  {"B110 ", "#C9CDD0"},
+    {"B120 ", "#CED1D4"}, {"B130 ", "#E0E1E3"}, {"B140 ", "#FAFAFA"},
+    {"B150 ", "#FFFFFF"}};
+
+map<string, string> BlueColorMap{
+    {"B0 ", "#000000"},   {" B10", "#062647"},  {"B20", "#26486B"},
+    {"B30", "#375A7F"},   {"B40", "#346792"},   {"B50", "#1A72BB"},
+    {"B60", "#057DCE"},   {"B70", "#259AE9"},   {"B80", "#37AEFE"},
+    {"B90", "#73C7FF"},   {"B100", "#9FCBFF"},  {"B110 ", "#C2DFFA"},
+    {"B120 ", "#CEE8FF"}, {"B130 ", "#DAEDFF"}, {"B140 ", "#F5FAFF"},
+    {"B150 ", "#FFFFFF"}};
 
 }  // namespace core
 
