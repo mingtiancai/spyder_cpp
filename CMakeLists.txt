@@ -48,3 +48,6 @@ include_directories(${CMAKE_SOURCE_DIR}/spyder_cpp/core)
 
 add_subdirectory(spyder_cpp)
 add_subdirectory(test)
+
+SET_PROPERTY(TARGET spdlog PROPERTY FOLDER "3rd_part/")
+SET_PROPERTY(TARGET CLI11 PROPERTY FOLDER "3rd_part/")

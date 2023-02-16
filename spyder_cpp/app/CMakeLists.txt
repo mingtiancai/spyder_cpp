@@ -51,3 +51,5 @@ install(TARGETS spyder_cpp
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(spyder_cpp)
 endif()
+
+SET_PROPERTY(TARGET spyder_cpp PROPERTY FOLDER "spyder/")
