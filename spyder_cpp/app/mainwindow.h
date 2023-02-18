@@ -16,6 +16,7 @@ public:
 	~MainWindow();
 
 	void createSplashScreen();
+	void setStyleSheet();
 
 public slots:
 	void shouWarning();

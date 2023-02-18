@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QSvgRenderer>
 #include <QMessageBox>
+#include <QFile>
 
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
@@ -20,6 +21,8 @@ MainWindow::MainWindow(QWidget* parent)
 
 	ui->statusbar->show();
 	ui->statusbar->showMessage(tr("hello spyder"), 2000);
+
+	setStyleSheet();
 
 }
 
@@ -66,4 +69,13 @@ void MainWindow::shouWarning()
 		"color: #F050F0;"
 		"}");
 	msgBox.exec();
+}
+
+void MainWindow::setStyleSheet()
+{
+	QFile file(":/qss/test1.qss");
+	file.open(QFile::ReadOnly);
+	QString styleSheet = QString::fromLatin1(file.readAll());
+
+	static_cast<QApplication*>(QCoreApplication::instance())->setStyleSheet(styleSheet);
 }
