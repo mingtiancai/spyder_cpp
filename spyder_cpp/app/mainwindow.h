@@ -17,6 +17,7 @@ public:
 
 	void createSplashScreen();
 	void setStyleSheet();
+	void initStatusBar();
 
 public slots:
 	void shouWarning();

@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget* parent)
 	ui->statusbar->showMessage(tr("hello spyder"), 2000);
 
 	setStyleSheet();
-
+	initStatusBar();
 }
 
 MainWindow::~MainWindow()
@@ -78,4 +78,11 @@ void MainWindow::setStyleSheet()
 	QString styleSheet = QString::fromLatin1(file.readAll());
 
 	static_cast<QApplication*>(QCoreApplication::instance())->setStyleSheet(styleSheet);
+}
+
+void MainWindow::initStatusBar()
+{
+	auto status = this->statusBar();
+	status->setObjectName("StartBar");
+	status->showMessage("Welcome to Spyder!", 5000);
 }
