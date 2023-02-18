@@ -4,6 +4,7 @@
 #include <QSplashScreen>
 #include <QPainter>
 #include <QSvgRenderer>
+#include <QMessageBox>
 
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
@@ -14,6 +15,12 @@ MainWindow::MainWindow(QWidget* parent)
 {
 	ui->setupUi(this);
 	setWindowTitle("spyder_cpp");
+
+	//connect(ui->pushButton, &QPushButton::clicked, this, &MainWindow::shouWarning);
+
+	ui->statusbar->show();
+	ui->statusbar->showMessage(tr("hello spyder"), 2000);
+
 }
 
 MainWindow::~MainWindow()
@@ -47,3 +54,16 @@ void MainWindow::createSplashScreen()
 	std::this_thread::sleep_for(std::chrono::seconds(2));
 }
 
+void MainWindow::shouWarning()
+{
+	QMessageBox msgBox;
+	msgBox.setText("The document has been modified.");
+	msgBox.setWindowTitle("Spyder1");
+	msgBox.setStyleSheet("QLabel{"
+		"min-width: 300px;"
+		"min-height: 150px; "
+		"font-size: 16px;"
+		"color: #F050F0;"
+		"}");
+	msgBox.exec();
+}

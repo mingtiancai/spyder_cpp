@@ -17,6 +17,9 @@ public:
 
 	void createSplashScreen();
 
+public slots:
+	void shouWarning();
+
 private:
 	Ui::MainWindow* ui;
 };
