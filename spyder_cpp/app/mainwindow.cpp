@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget* parent)
 {
 	ui->setupUi(this);
 	setWindowTitle("spyder_cpp");
+	init();
 
 	//connect(ui->pushButton, &QPushButton::clicked, this, &MainWindow::shouWarning);
 
@@ -85,4 +86,9 @@ void MainWindow::initStatusBar()
 	auto status = this->statusBar();
 	status->setObjectName("StartBar");
 	status->showMessage("Welcome to Spyder!", 5000);
+}
+
+void MainWindow::init()
+{
+	cursorBlinkOsDefault = QApplication::cursorFlashTime();
 }
